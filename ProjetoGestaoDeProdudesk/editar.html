@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Curso</title>
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/editar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="logo">
+                        <img src="assets/img/okuyaso.jpg">
+                        <span class="nav-item">Admin</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-item">Home</span>
+                    </a></li>
+                <li><a href="new.html">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a></li>
+                <li><a href="filtro.html">
+                        <i class="fas fa-database"></i>
+                        <span class="nav-item">Categorias</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-question"></i>
+                        <span class="nav-item">Outro</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-item">Configurações</span>
+                    </a></li>
+
+                <li><a href="#" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Sair</span>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <section class="main">
+            <div class="editar-curso">
+                <h1><i class="fas fa-edit"></i> Editar Curso</h1>
+                <form onsubmit="return validarFormulario()">
+                    <div class="formulario">
+                        <div class="nome-fornecedor-container">
+                            <div class="nome-produto">
+                                <label for="nome-produto">Nome do Produto:</label>
+                                <input type="text" id="nome-produto" name="nome-produto" required>
+                            </div>
+                            <div class="fornecedor">
+                                <label for="fornecedor">Fornecedor:</label>
+                                <input type="text" id="fornecedor" name="fornecedor" required>
+                            </div>
+                        </div>
+        
+                        <div class="valor-estoque-container">
+                            <div class="valor-produto">
+                                <label for="valor-produto">Valor do Produto:</label>
+                                <input type="text" id="valor-produto" name="valor-produto" required>
+                            </div>
+                            <div class="estoque-outro-container">
+                                <div class="estoque">
+                                    <label for="estoque">Estoque:</label>
+                                    <input type="text" id="estoque" name="estoque" required>
+                                </div>
+                                <div class="outro-imagem-container">
+                                    <div class="outro">
+                                        <label for="outro">Outro:</label>
+                                        <input type="text" id="outro" name="outro" required>
+                                    </div>
+                                    <div class="imagem-produto">
+                                        <label for="imagem-produto">Imagem do Produto:</label>
+                                        <input type="file" id="imagem-produto" name="imagem-produto" accept="image/*" onchange="exibirImagem(this)" required>
+                                        <div class="image-preview">
+                                            <img id="preview-imagem" src="" alt="Pré-visualização da imagem">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+        
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea>
+        
+                        <button type="submit">Salvar Alterações</button>
+        
+                        <div id="mensagem-salvo" style="display: none;">Salvo com sucesso</div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        
+
+        <script src="assets/js/editar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro de Produtos</title>
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/filtro.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#" class="logo">
+              <img src="assets/img/okuyaso.jpg">
+              <span class="nav-item">Admin</span>
+            </a></li>
+          <li><a href="#">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a></li>
+          <li><a href="new.html">
+              <i class="fas fa-chart-line"></i>
+              <span class="nav-item">Dashboard</span>
+            </a></li>
+          <li><a href="filtro.html">
+              <i class="fas fa-database"></i>
+              <span class="nav-item">Categorias</span>
+            </a></li>
+          <li><a href="#">
+              <i class="fas fa-question"></i>
+              <span class="nav-item">Outro</span>
+            </a></li>
+          <li><a href="#">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Configurações</span>
+            </a></li>
+
+          <li><a href="#" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Sair</span>
+            </a></li>
+        </ul>
+      </nav>
+
+
+    <section class="main">
+      <div class="filtro">
+        <h2>Filtrar Produtos</h2>
+        <form id="filter-form">
+          <div class="form-group">
+            <label for="category">Categorias:</label>
+            <select name="category" id="category">
+              <option value="">Todas</option>
+              <option value="eletronicos">Eletrônicos</option>
+              <option value="vestuario">Vestuário</option>
+              <option value="livros">Livros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="price">Faixa de Preço:</label>
+            <input type="text" id="price-min" placeholder="Mínimo">
+            <input type="text" id="price-max" placeholder="Máximo">
+          </div>
+          <div class="form-group">
+            <label for="sort-by">Ordenar Por:</label>
+            <select name="sort-by" id="sort-by">
+              <option value="recomendados">Recomendados</option>
+              <option value="mais-populares">Mais Populares</option>
+              <option value="preco-crescente">Preço: Crescente</option>
+              <option value="preco-decrescente">Preço: Decrescente</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="items-per-page">Itens por Página:</label>
+            <input type="number" id="items-per-page" min="1" value="10">
+            <button type="submit">Aplicar Filtros</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="container-produto">
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 1">
+        <h3>Nome do Produto 1</h3>
+        <p>Descrição do Produto 1</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!-- produto 2 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 2">
+        <h3>Nome do Produto 2</h3>
+        <p>Descrição do Produto 2</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!--produto 3 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 3">
+        <h3>Nome do Produto 3</h3>
+        <p>Descrição do Produto 3</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!--produto 4 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 4">
+        <h3>Nome do Produto 4</h3>
+        <p>Descrição do Produto 4</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!-- Exemplo de produto 5 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 5">
+        <h3>Nome do Produto 5</h3>
+        <p>Descrição do Produto 5</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!-- Exemplo de produto 6 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 6">
+        <h3>Nome do Produto 6</h3>
+        <p>Descrição do Produto 6</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!-- Exemplo de produto 7 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 7">
+        <h3>Nome do Produto 7</h3>
+        <p>Descrição do Produto 7</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <!-- Exemplo de produto 8 -->
+      <div class="produto">
+        <img src="assets/img/pc_positivo.png" alt="Produto 8">
+        <h3>Nome do Produto 8</h3>
+        <p>Descrição do Produto 8</p>
+        <p>R$ 100.000</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+    </div>
+    </section>
+
+    <script src="assets/js/filtro.js"></script>
+</body>
+
+</html>

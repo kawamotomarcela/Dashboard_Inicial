@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CRUD - Gestao de Produtos</title>
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/new.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+            <img src="assets/img/okuyaso.jpg">
+            <span class="nav-item">Admin</span>
+          </a></li>
+        <li><a href="#">
+            <i class="fas fa-home"></i>
+            <span class="nav-item">Home</span>
+          </a></li>
+        <li><a href="#">
+            <i class="fas fa-chart-line"></i>
+            <span class="nav-item">Dashboard</span>
+          </a></li>
+        <li><a href="filtro.html">
+            <i class="fas fa-database"></i>
+            <span class="nav-item">Categorias</span>
+          </a></li>
+        <li><a href="#">
+            <i class="fas fa-question"></i>
+            <span class="nav-item">Outro</span>
+          </a></li>
+        <li><a href="#">
+            <i class="fas fa-cog"></i>
+            <span class="nav-item">Configurações</span>
+          </a></li>
+
+        <li><a href="#" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Sair</span>
+          </a></li>
+      </ul>
+    </nav>
+
+
+    <section class="main">
+      <div class="main-top"></div>
+      <div class="presentation">
+        <div class="card">
+          <div class="content">
+            <div class="text">
+              <h2>Dashboard</h2>
+              <h1>Bem-Vindo ao Produdesk<i class="fas fa-thumbs-up"></i></h1>
+              <span>Uma descrição muito legal, eu amo pão de batata.</span>
+              <button>Saiba Mais</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="product">
+        <div class="product-list">
+          <h1>Gestão de Produtos</h1>
+          <button class="import" onclick="showPopup()">Importar <i class="fas fa-file-import"></i></button>
+          <div class="popup" id="popup">
+            <div class="popup-content">
+              <span class="close" onclick="closePopup()">&times;</span>
+              <h2>Importar produtos</h2>
+              <p>1. Realize o upload do seu arquivo em formato XLSX</p>
+              <p>2. Se você não sabe qual deve ser o padrão do arquivo, você pode comer uma batata</p>
+              <div class="container-import">
+                <input type="file" id="fileInput" onchange="updateFileName()">
+                <label for="fileInput" id="chooseBtn">Escolher arquivo</label>
+                <span id="fileName"></span>
+              </div>
+              <div class="button-container2">
+                <button id="uploadBtn" onclick="uploadFile()">Enviar</button>
+                <button id="cancelBtn" onclick="closePopup()">Cancelar</button>
+              </div>
+              <p id="successMessage" style="display: none;">Enviado com sucesso!</p>
+            </div>
+          </div>
+          <button class="add-product" onclick="showAddProductPopup()">Adicionar Produto <i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="add-product-popup" id="addProductPopup">
+          <div class="popup-content-add">
+            <span class="close" onclick="closeAddProductPopup()">&times;</span>
+            <h2>Adicionar Produto</h2>
+            <form id="productForm">
+              <label for="productName">Nome do Produto:</label>
+              <input type="text" id="productName" name="productName" required>
+      
+              <label for="productSupplier">Fornecedor:</label>
+              <input type="text" id="productSupplier" name="productSupplier" required>
+      
+              <label for="productStock">Estoque:</label>
+              <input type="text" id="productStock" name="productStock" required>
+      
+              <label for="productValue">Valor:</label>
+              <input type="text" id="productValue" name="productValue" required>
+      
+              <label for="productOther">Outro:</label>
+              <input type="text" id="productOther" name="productOther" required>
+      
+              <button type="submit">Adicionar</button>
+        </form>
+    </div>
+</div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Produto</th>
+              <th>Fornecedor</th>
+              <th>Estoque</th>
+              <th>Valor</th>
+              <th>Outro</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>Computer</td>
+              <td>Positivo</td>
+              <td>100 un.</td>
+              <td>R$ 10000.00</td>
+              <td>texto</td>
+              <td class="button-container">
+                <div class="button-container">
+                  <button onClick="location.href='Editar.html'"">Editar <i class="fas fa-edit"></i></button>
+                  <button onclick="showRemovePopup()">Remover <i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+              <div class="remove-popup" id="removePopup">
+                <div class="popup-content-remove">
+                  <span class="close" onclick="closeRemovePopup()">&times;</span>
+                  <img src="assets/img/joia.png" alt="Removido" width="100">
+                  <h2>Removido com Sucesso</h2>
+                </div>
+              </div>
+              
+            </tr>
+            <tr class="active">
+              <td>02</td>
+              <td>Computer</td>
+              <td>Positivo</td>
+              <td>100 un.</td>
+              <td>R$ 10000.00</td>
+              <td>texto</td>
+              <td class="button-container">
+                <div class="button-container">
+                  <button onClick="location.href='Editar.html'"">Editar <i class="fas fa-edit"></i></button>
+                  <button onclick="showRemovePopup()">Remover <i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+              <div class="remove-popup" id="removePopup">
+                <div class="popup-content-remove">
+                  <span class="close" onclick="closeRemovePopup()">&times;</span>
+                  <img src="assets/img/joia.png" alt="Removido" width="100">
+                  <h2>Removido com Sucesso</h2>
+                </div>
+              </div>
+              
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>Computer</td>
+              <td>Positivo</td>
+              <td>100 un.</td>
+              <td>R$ 10000.00</td>
+              <td>texto</td>
+              <td class="button-container">
+                <div class="button-container">
+                  <button onClick="location.href='Editar.html'"">Editar <i class="fas fa-edit"></i></button>
+                  <button onclick="showRemovePopup()">Remover <i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+              <div class="remove-popup" id="removePopup">
+                <div class="popup-content-remove">
+                  <span class="close" onclick="closeRemovePopup()">&times;</span>
+                  <img src="assets/img/joia.png" alt="Removido" width="100">
+                  <h2>Removido com Sucesso</h2>
+                </div>
+              </div>
+              
+            </tr>
+            <tr>
+              <td>04</td>
+              <td>Computer</td>
+              <td>Positivo</td>
+              <td>100 un.</td>
+              <td>R$ 10000.00</td>
+              <td>texto</td>
+              <td class="button-container">
+                <div class="button-container">
+                  <button onClick="location.href='Editar.html'"">Editar <i class="fas fa-edit"></i></button>
+                  <button onclick="showRemovePopup()">Remover <i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+              <div class="remove-popup" id="removePopup">
+                <div class="popup-content-remove">
+                  <span class="close" onclick="closeRemovePopup()">&times;</span>
+                  <img src="assets/img/joia.png" alt="Removido" width="100">
+                  <h2>Removido com Sucesso</h2>
+                </div>
+              </div>
+              
+            </tr>
+            <tr>
+              <td>05</td>
+              <td>Computer</td>
+              <td>Positivo</td>
+              <td>100 un.</td>
+              <td>R$ 10000.00</td>
+              <td>texto</td>
+              <td class="button-container">
+                <div class="button-container">
+                  <button onClick="location.href='Editar.html'"">Editar <i class="fas fa-edit"></i></button>
+                  <button onclick="showRemovePopup()">Remover <i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+              <div class="remove-popup" id="removePopup">
+                <div class="popup-content-remove">
+                  <span class="close" onclick="closeRemovePopup()">&times;</span>
+                  <img src="assets/img/joia.png" alt="Removido" width="100">
+                  <h2>Removido com Sucesso</h2>
+                </div>
+              </div>
+              
+            </tr>
+            <tr>
+              <td>06</td>
+              <td>Computer</td>
+              <td>Positivo</td>
+              <td>100 un.</td>
+              <td>R$ 10000.00</td>
+              <td>texto</td>
+              <td class="button-container">
+                <div class="button-container">
+                  <button onClick="location.href='Editar.html'"">Editar <i class="fas fa-edit"></i></button>
+                  <button onclick="showRemovePopup()">Remover <i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+              <div class="remove-popup" id="removePopup">
+                <div class="popup-content-remove">
+                  <span class="close" onclick="closeRemovePopup()">&times;</span>
+                  <img src="assets/img/joia.png" alt="Removido" width="100">
+                  <h2>Removido com Sucesso.</h2>
+                </div>
+              </div>
+              
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  </section>
+  </section>
+  </div>
+
+  <script src="assets/js/new.js"></script>
+
+</body>
+</html>
